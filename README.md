@@ -1,24 +1,27 @@
-# Project Name
-### Overview
-Brief description of what this project does (e.g., "Automates Kubernetes pod recovery").
+# Kubernetes Labs (CKA) – Auto-Heal System
 
-### Architecture
-Diagram or bullet points showing tools used:
-- AWS (EKS, EC2, S3)
-- Terraform (IaC)
-- Docker + Kubernetes
-- CI/CD (GitHub Actions)
-- Monitoring (Prometheus + Grafana)
+This project demonstrates a **Kubernetes self-healing mechanism** using **Python** and **Kubernetes API**.
 
-### Setup
-1. Clone the repo
-2. `terraform init && terraform apply`  
-3. `kubectl apply -f deployment.yaml`
+## 🚀 Features
+- Detects non-running pods across namespaces.
+- Automatically deletes and restarts failed pods.
+- Sends alerts to Slack via webhook integration.
+- Includes sample deployment and health-check CronJob.
 
-### Features
-- Automated deployments with CI/CD
-- Monitoring & alerting
-- Auto-healing / scaling
+## ⚙️ Tech Stack
+- Kubernetes (EKS / Minikube)
+- Python 3
+- Slack API
+- kubernetes-client (Python SDK)
+
+## ▶️ Run Locally
+```bash
+git clone https://github.com/Utkarsh01Nandurkar/kubernetes-labs-cka.git
+cd kubernetes-labs-cka/autoheal
+pip install -r requirements.txt
+export SLACK_WEBHOOK="https://hooks.slack.com/services/XXXX/YYYY/ZZZZ"
+python heal_pods.py
+
 - Cost optimization
 
 ### Tech Stack
